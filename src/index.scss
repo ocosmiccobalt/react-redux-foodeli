@@ -1,0 +1,165 @@
+@use "./assets/sass/normalize";
+@use "./assets/sass/variables" as *;
+@use "./assets/sass/mixins" as *;
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url("/fonts/poppins-latin-500.woff2") format("woff2"),
+    url("/fonts/poppins-latin-500.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url("/fonts/poppins-latin-600.woff2") format("woff2"),
+    url("/fonts/poppins-latin-600.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("/fonts/poppins-latin-700.woff2") format("woff2"),
+    url("/fonts/poppins-latin-700.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url("/fonts/rubik-latin-600.woff2") format("woff2"),
+    url("/fonts/rubik-latin-600.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("/fonts/rubik-latin-700.woff2") format("woff2"),
+    url("/fonts/rubik-latin-700.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lobster Two";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("/fonts/lobster-two-11-glyphs-700-italic.woff2") format("woff2"),
+    url("/fonts/lobster-two-11-glyphs-700-italic.woff") format("woff");
+  unicode-range: U+0046, U+0052, U+0061, U+0064-0065, U+006E-006F, U+0072-0075;
+}
+
+@font-face {
+  font-family: "Poppins fallback";
+  size-adjust: 112.5%;
+  ascent-override: 108%;
+  src: local("Arial");
+}
+
+@font-face {
+  font-family: "Rubik fallback";
+  size-adjust: 104.9%;
+  ascent-override: 90%;
+  src: local("Arial");
+}
+
+@font-face {
+  font-family: "Lobster Two fallback";
+  size-adjust: 81.15000000000008%;
+  ascent-override: 130%;
+  src: local("Arial");
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 20rem;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-family: $poppins-font-family;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $text-color;
+
+  @include break-word();
+
+  background-color: $body-bg-color;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+@supports (display: grid) {
+  .page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+
+    height: auto;
+    min-height: 100%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@media (min-width: $desktop-width) {
+  .wrapper {
+    max-width: $desktop-width;
+    margin: 0 auto;
+  }
+}
