@@ -1,0 +1,321 @@
+@use "sass:color";
+@use "../../assets/sass/variables" as *;
+@use "../../assets/sass/mixins" as *;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 3.125rem;
+  max-width: 16rem;
+  min-height: 3.125rem;
+  padding: 0.75rem 1.25rem;
+
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  color: $body-bg-color;
+
+  background-color: $primary-color;
+  border: none;
+  border-radius: 3.125rem;
+
+  cursor: pointer;
+  transition: 220ms ease-in-out;
+
+  &:hover,
+  &:active {
+    background-color: color.scale($primary-color, $lightness: -20%);
+  }
+
+  &:focus {
+    outline: 0.25rem solid $outline-color;
+    outline-offset: 0.25rem;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 0.25rem solid $outline-color;
+    outline-offset: 0.25rem;
+  }
+
+  &[disabled],
+  &[aria-disabled="true"] {
+    color: $faint-text-color;
+
+    background-color: $alt-bg-color;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &[aria-disabled="true"] {
+    cursor: default;
+  }
+}
+
+.button--cart {
+  position: relative;
+
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 0.875rem;
+
+  color: $heavy-text-color;
+
+  background-color: $body-bg-color;
+  border-radius: 0;
+
+  &:hover,
+  &:active {
+    color: $primary-color;
+
+    background-color: $body-bg-color;
+  }
+}
+
+.button--login {
+  min-width: 7.5rem;
+}
+
+.button--video {
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+
+  color: $text-color;
+
+  background-color: $body-bg-color;
+
+  &:hover,
+  &:active {
+    color: $body-bg-color;
+  }
+
+  &::before {
+    content: "";
+
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    display: inline-block;
+    width: 1.625rem;
+    height: 1.625rem;
+    margin-right: 0.625rem;
+
+    vertical-align: middle;
+
+    background-color: $outline-color;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3E%3Cpath fill='%23010f1c' d='M6.235 2.192A1.5 1.5 0 0 0 4 3.5v9a1.5 1.5 0 0 0 2.235 1.307l8-4.5a1.5 1.5 0 0 0 0-2.614l-8-4.5v-.001Z'/%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-size: 0.75rem 0.75rem;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
+}
+
+.button--call {
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 0.75rem;
+
+  border: 0.25rem solid $body-bg-color;
+  border-radius: 50%;
+}
+
+.button--tab {
+  min-height: 4.25rem;
+  padding: 0.625rem 0.875rem;
+
+  cursor: default;
+
+  &:hover,
+  &:active {
+    background-color: $primary-color;
+  }
+
+  &[tabindex="-1"] {
+    color: $heavy-text-color;
+
+    background-color: $body-bg-color;
+
+    cursor: pointer;
+  }
+
+  &[tabindex="-1"]:hover,
+  &[tabindex="-1"]:active {
+    color: $body-bg-color;
+
+    background-color: color.scale($primary-color, $lightness: -20%);
+  }
+
+  &::before {
+    content: "";
+
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+
+    vertical-align: middle;
+
+    background-color: $body-bg-color;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+  }
+}
+
+.button--burger::before {
+  @include image-set("icon-burger");
+}
+
+.button--pizza::before {
+  @include image-set("icon-pizza");
+}
+
+.button--cupcake::before {
+  @include image-set("icon-cupcake");
+}
+
+.button--ramen::before {
+  @include image-set("icon-ramen");
+}
+
+.button--ice-cream::before {
+  @include image-set("icon-ice-cream");
+  background-size: auto 90%;
+}
+
+.button--carousel {
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 0.75rem;
+
+  border-radius: 50%;
+
+  &[aria-disabled="true"] {
+    color: $heavy-text-color;
+  }
+}
+
+.button__amount {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: inline-block;
+  min-width: 1.125rem;
+  padding: 0.063rem 0.125rem;
+
+  font-size: 0.625rem;
+  vertical-align: top;
+  color: $body-bg-color;
+
+  background-color: $primary-color;
+  border-radius: 1.125rem;
+}
+
+.button__icon {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  display: inline-block;
+
+  vertical-align: middle;
+
+  &--cart {
+    width: 1.25rem;
+    height: 1.375rem;
+  }
+
+  &--login {
+    width: 1rem;
+    height: 1rem;
+
+    margin-right: 0.313rem;
+  }
+
+  &--call {
+    width: 0.813rem;
+    height: 1.125rem;
+  }
+
+  &--prev,
+  &--next {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .button--started {
+    min-width: 11.625rem;
+    min-height: 4.25rem;
+
+    font-size: 1.125rem;
+  }
+
+  .button--video {
+    justify-content: flex-start;
+
+    min-width: 12.875rem;
+    min-height: 4.25rem;
+    padding: 0.688rem 0.875rem;
+
+    font-size: 1.125rem;
+    text-align: left;
+
+    &::before {
+      width: 2.875rem;
+      height: 2.875rem;
+      margin-right: 0.938rem;
+
+      background-size: 1rem 1rem;
+    }
+  }
+
+  .button--download {
+    min-width: 12.5rem;
+    min-height: 4.25rem;
+
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .button--login {
+    font-size: 0.875rem;
+  }
+
+  .button--tab {
+    justify-content: flex-start;
+
+    min-width: 15.875rem;
+    min-height: 5.313rem;
+    padding: 1.125rem 0.875rem;
+    padding-right: 1.25rem;
+
+    font-size: 1.5rem;
+    text-align: left;
+
+    &::before {
+      margin-right: 1.375rem;
+    }
+  }
+
+  .button--carousel {
+    width: 4rem;
+    height: 4rem;
+    padding: 1.25rem;
+  }
+}
