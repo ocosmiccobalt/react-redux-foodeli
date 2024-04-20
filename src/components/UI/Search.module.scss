@@ -1,0 +1,185 @@
+@use "../../assets/sass/variables" as *;
+
+.search {
+  position: relative;
+
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+
+  color: $heavy-text-color;
+}
+
+.search__label {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  display: block;
+  width: 3.625em;
+  height: 3.625em;
+  padding: 1.125em;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.search__icon {
+  display: block;
+  width: 1.375em;
+  height: 1.375em;
+}
+
+.search__input {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+
+  display: block;
+  min-width: 17.5em;
+  width: 100%;
+  height: 3.625em;
+  padding: 0.875em 0.5em;
+  padding-right: 4em;
+
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+
+  background-color: $body-bg-color;
+  border: 0.125em solid $heavy-text-color;
+  border-radius: 0;
+
+  pointer-events: none;
+
+  opacity: 0;
+  overflow: hidden;
+  transform: scale(0);
+  transition: transform 0.3s ease-in;
+
+  &::placeholder {
+    color: $faint-text-color;
+    opacity: 1;
+  }
+
+  &:focus,
+  .search--hasfocus & {
+    z-index: 10;
+
+    pointer-events: auto;
+
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: 100% 50%;
+  }
+
+  &:focus {
+    outline: 0.2em solid $outline-color;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 0.2em solid $outline-color;
+  }
+}
+
+.search:focus-within .search__input {
+  z-index: 10;
+
+  pointer-events: auto;
+
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: 100% 50%;
+}
+
+.search__button {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+
+  display: block;
+  width: 3.625em;
+  height: 3.625em;
+  padding: 1.125em;
+
+  font-size: inherit;
+  color: inherit;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+
+  pointer-events: none;
+
+  opacity: 0;
+  overflow: hidden;
+  transform: scale(0);
+  transition: transform 0.3s ease-in, outline 220ms ease-in-out, outline-offset 220ms ease-in-out;
+
+  .search__input:focus ~ &,
+  .search--hasfocus & {
+    z-index: 10;
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: 100% 50%;
+  }
+
+  &:hover,
+  &:active {
+    color: $primary-color;
+  }
+
+  &:focus {
+    outline: 0.2em solid $outline-color;
+    outline-offset: -0.2em;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 0.2em solid $outline-color;
+    outline-offset: -0.2em;
+  }
+}
+
+.search:focus-within .search__button {
+  z-index: 10;
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: 100% 50%;
+}
+
+@media (min-width: $tablet-width) {
+  .search {
+    display: inline-flex;
+    justify-content: flex-start;
+
+    width: auto;
+  }
+
+  .search__input {
+    width: 22em;
+    padding-left: 0.75em;
+  }
+}
