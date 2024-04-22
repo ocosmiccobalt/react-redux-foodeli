@@ -1,0 +1,132 @@
+@use "../../../assets/sass/variables" as *;
+@use "../../../assets/sass/mixins" as *;
+
+.site-list {
+  position: absolute;
+  z-index: 15;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  margin: 0;
+
+  @include reset-list();
+
+  background-color: $body-bg-color;
+  box-shadow: 0 0.25em 0.5em 0 $text-color;
+}
+
+.site-list:not(.site-list--open) {
+  display: none;
+}
+
+.site-list__link {
+  display: block;
+  padding: 1.25em 2em;
+
+  font: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: inherit;
+
+  border-radius: 0.2em;
+
+  &[href] {
+    cursor: pointer;
+    transition: 220ms ease-in-out;
+  }
+
+  &[href]:hover,
+  &[href]:active {
+    background-color: $accent-bg-color;
+  }
+
+  &:focus {
+    outline: 0.2em solid $outline-color;
+    outline-offset: -0.2em;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 0.2em solid $outline-color;
+    outline-offset: -0.2em;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .site-list {
+    position: static;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .site-list:not(.site-list--open) {
+    display: flex;
+  }
+
+  .site-list__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+    margin: 0 0.25em;
+  }
+
+  .site-list__link {
+    display: inline-block;
+    min-width: 8em;
+    max-width: 10.875em;
+    padding: 0.75em 1em;
+
+    font-weight: 500;
+    vertical-align: top;
+
+    border-radius: 0;
+
+    &[href]:hover,
+    &[href]:active {
+      color: $heavy-text-color;
+    }
+
+    &:focus {
+      outline: 0.25rem solid $outline-color;
+      outline-offset: 0.25rem;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 0.25rem solid $outline-color;
+      outline-offset: 0.25rem;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .site-list {
+    justify-content: center;
+  }
+
+  .site-list__item {
+    margin: 0.5em 0.25em;
+  }
+
+  .site-list__link {
+    min-width: 8em;
+    max-width: 10.5em;
+    padding: 1em;
+
+    font-size: 0.875em;
+  }
+}
