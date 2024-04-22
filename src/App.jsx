@@ -1,6 +1,13 @@
+import PageHeader from './components/Layout/PageHeader.jsx';
+
 function App() {
   return (
-    <h1>Claim Best Offer on Fast <i>Food</i> & <i>Restaurants</i></h1>
+    <>
+      <PageHeader />
+      <main>
+        <h1>Claim Best Offer on Fast <i>Food</i> & <i>Restaurants</i></h1>
+      </main>
+    </>
   );
 }
 

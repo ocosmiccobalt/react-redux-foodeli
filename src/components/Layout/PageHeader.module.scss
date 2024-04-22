@@ -1,0 +1,170 @@
+@use "../../assets/sass/variables" as *;
+
+.page-header {
+  flex-shrink: 0;
+}
+
+@supports (display: grid) {
+  .page-header {
+    grid-row: 1;
+  }
+}
+
+.page-header__wrapper {
+  position: relative;
+}
+
+.page-header__logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+
+  margin: 0.5em;
+}
+
+.page-header__user-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  padding: 0 0.25em;
+}
+
+.page-header__search,
+.page-header__button {
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.page-header__button {
+  margin: 0.5rem 0.25rem;
+
+  &--cart {
+    order: 3;
+  }
+
+  &--login {
+    margin-left: auto;
+  }
+}
+
+@supports (display: grid) {
+  .page-header__wrapper {
+    position: static;
+
+    display: grid;
+    grid-template-columns:
+      [logo-start nav-start tools-start]
+      minmax(0, 1fr)
+      [logo-end nav-end tools-end];
+    grid-template-rows:
+      [logo-start nav-start]
+      min-content
+      [nav-end tools-start]
+      min-content
+      [logo-end tools-end];
+  }
+
+  .page-header__logo {
+    position: static;
+
+    grid-area: logo;
+    justify-self: start;
+    align-self: start;
+  }
+
+  .page-header__nav {
+    grid-area: nav;
+  }
+
+  .page-header__user-tools {
+    grid-area: tools;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .page-header__wrapper {
+    position: static;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  @supports (display: grid) {
+    .page-header__wrapper {
+      display: flex;
+    }
+  }
+
+  .page-header__logo {
+    position: static;
+
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    margin-left: calc(2.6% - 0.25em);
+  }
+
+  .page-header__nav {
+    flex-shrink: 0;
+    flex-basis: auto;
+    order: 3;
+  }
+
+  .page-header__user-tools {
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: auto;
+    justify-content: flex-end;
+
+    width: 66.66%;
+    padding: 0 2.6%;
+  }
+
+  .page-header__search {
+    align-self: center;
+  }
+
+  .page-header__button {
+    margin: 0.75rem 0.25rem;
+
+    &--cart {
+      order: 0;
+    }
+
+    &--login {
+      margin-right: 0;
+      margin-left: 1.125rem;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-header__wrapper {
+    padding-top: 2em;
+  }
+
+  .page-header__logo {
+    margin-left: 0.688em;
+  }
+
+  .page-header__nav {
+    order: 0;
+
+    margin-left: auto;
+  }
+
+  .page-header__user-tools {
+    flex-grow: 0;
+
+    width: 25%;
+    padding: 0 0.938em;
+  }
+
+  .page-header__button {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
