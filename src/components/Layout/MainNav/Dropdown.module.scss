@@ -1,0 +1,205 @@
+@use "sass:color";
+@use "../../../assets/sass/variables" as *;
+@use "../../../assets/sass/mixins" as *;
+
+.dropdown__title {
+  display: block;
+  width: 100%;
+  padding: 1.25em 2em;
+
+  font: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: inherit;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 0.2em;
+
+  &[href],
+  &[aria-expanded] {
+    cursor: pointer;
+    transition: 220ms ease-in-out;
+  }
+
+  &::after {
+    content: "";
+
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 0.5em;
+    margin-bottom: 0.125em;
+
+    vertical-align: middle;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 10 11'%3E%3Cpath stroke='%23EB0029' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M1.667 4.25 5 7.583 8.333 4.25'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: transform 220ms ease-in-out;
+  }
+
+  &--open::after {
+    transform: rotate(180deg);
+  }
+
+  &[href]:hover,
+  &[aria-expanded]:hover,
+  &[href]:active,
+  &[aria-expanded]:active {
+    background-color: $accent-bg-color;
+  }
+
+  &:focus {
+    outline: 0.2em solid $outline-color;
+    outline-offset: -0.2em;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 0.2em solid $outline-color;
+    outline-offset: -0.2em;
+  }
+}
+
+.dropdown__list {
+  display: none;
+  margin: 0;
+
+  @include reset-list();
+
+  background-color: $alt-bg-color;
+}
+
+.dropdown__list--open {
+  display: block;
+}
+
+.dropdown__link {
+  display: block;
+  padding: 0.65em 2em;
+
+  font: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  text-align: left;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: inherit;
+
+  border-radius: 0.2em;
+
+  &[href] {
+    cursor: pointer;
+    transition: 220ms ease-in-out;
+  }
+
+  &[href]:hover,
+  &[href]:active {
+    background-color: $accent-bg-color;
+  }
+
+  &:focus {
+    outline: 0.2em solid $outline-color;
+    outline-offset: -0.2em;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 0.2em solid $outline-color;
+    outline-offset: -0.2em;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown__title {
+    display: inline-block;
+    width: auto;
+    min-width: 8em;
+    max-width: 10.875em;
+    padding: 0.75em 1em;
+
+    font-weight: 500;
+    vertical-align: top;
+
+    border-radius: 0;
+
+    &[href]:hover,
+    &[aria-expanded]:hover,
+    &[href]:active,
+    &[aria-expanded]:active {
+      color: $heavy-text-color;
+    }
+
+    &:focus {
+      outline: 0.25rem solid $outline-color;
+      outline-offset: 0.25rem;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 0.25rem solid $outline-color;
+      outline-offset: 0.25rem;
+    }
+  }
+
+  .dropdown__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    color: $heavy-text-color;
+
+    background-color: $accent-bg-color;
+    border-radius: 0.2em;
+  }
+
+  .dropdown__link {
+    padding: 0.75em 1em;
+
+    font-weight: 500;
+    text-align: center;
+
+    &[href]:hover,
+    &[href]:active {
+      color: $body-bg-color;
+
+      background-color: color.scale($primary-color, $lightness: -20%);
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .dropdown__title {
+    min-width: 8em;
+    max-width: 10.5em;
+    padding: 1em;
+
+    font-size: 0.875em;
+  }
+
+  .dropdown__link {
+    padding: 1em;
+
+    font-size: 0.875em;
+  }
+}
