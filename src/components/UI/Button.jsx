@@ -2,17 +2,22 @@ import classes from './Button.module.scss';
 
 function Button({
   className = '',
-  modifier = '',
+  modifiers = [],
   type,
   onClick,
   disabled,
   children
 }) {
-  const subClass = (modifier === '') ? '' : classes['button--' + modifier];
+  const subClasses = modifiers.map((m) => classes['button--' + m]);
+  const fullClassName = [
+    className,
+    classes.button,
+    ...subClasses
+  ].join(' ');
 
   return (
     <button
-      className={`${className} ${classes.button} ${subClass}`}
+      className={fullClassName}
       type={type || 'button'}
       onClick={onClick}
       disabled={disabled}
