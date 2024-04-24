@@ -1,5 +1,5 @@
-import Button from './Button.jsx';
-import classes from './Button.module.scss';
+import Button from '../UI/Button.jsx';
+import classes from '../UI/Button.module.scss';
 
 function LoginButton({ className = '' }) {
   return (

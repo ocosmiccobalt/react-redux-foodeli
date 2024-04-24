@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import SiteList from './SiteList.jsx';
+import SiteList from './SiteList/SiteList.jsx';
 import classes from './MainNav.module.scss';
 
 function MainNav({ className = '' }) {

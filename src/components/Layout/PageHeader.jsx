@@ -2,7 +2,7 @@ import Logo from './Logo.jsx';
 import MainNav from './MainNav/MainNav.jsx';
 import Search from '../UI/Search.jsx';
 import CartButton from '../Cart/CartButton.jsx';
-import LoginButton from '../UI/LoginButton.jsx';
+import LoginButton from '../Login/LoginButton.jsx';
 import classes from './PageHeader.module.scss';
 
 function PageHeader() {
