@@ -5,7 +5,7 @@ function LoginButton({ className = '' }) {
   return (
     <Button
       className={className}
-      modifier='login'
+      modifiers={['login']}
     >
       <svg
         className={`${classes.button__icon} ${classes['button__icon--login']}`}

@@ -5,7 +5,7 @@ function CartButton({ className = '' }) {
   return (
     <Button
       className={className}
-      modifier='cart'
+      modifiers={['cart']}
     >
       <span className='visually-hidden'>Open the Cart:</span>
       <span className={classes.button__amount}>
