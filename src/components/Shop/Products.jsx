@@ -1,3 +1,6 @@
+import { useDispatch } from 'react-redux';
+
+import { cartActions } from '../../store/cart-slice.js';
 import Tabbed from '../UI/Tabbed/Tabbed.jsx';
 
 const DUMMY_PRODUCTS = [
@@ -144,13 +147,24 @@ function Products() {
   const tabbedSectionId = 'menu';
   const titleId = 'menu-title';
 
+  const dispatch = useDispatch();
+
+  function handleCartItemAdd(item) {
+    dispatch(cartActions.addItemToCart({ ...item, quantity: 1 }));
+  }
+
   const tabbedItems = DUMMY_PRODUCTS.map((arr, i) => {
     const productItems = arr.map((p) => (
       <li key={p.id}>
         <article>
           <h3>{p.title}</h3>
           <p>{`$${p.price}`}</p>
-          <button type='button'>Order now</button>
+          <button
+            type='button'
+            onClick={handleCartItemAdd.bind(null, p)}
+          >
+            Order now
+          </button>
         </article>
       </li>
     ));
