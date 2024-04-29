@@ -33,17 +33,21 @@ function Cart() {
     dispatch(cartActions.addItemToCart({ ...item, quantity: 1 }));
   }
 
-  const cartItems = items.map((item) => (
-    <CartItem
-      key={item.id}
-      title={item.title}
-      price={item.price}
-      quantity={item.quantity}
-      totalPrice={item.totalPrice}
-      onRemove={handleCartItemRemove.bind(null, item.id)}
-      onAdd={handleCartItemAdd.bind(null, item)}
-    />
-  ));
+  const cartItems = items.map((item) => {
+    const { id, title, price, quantity, totalPrice } = item;
+
+    return (
+      <CartItem
+        key={id}
+        title={title}
+        price={price}
+        quantity={quantity}
+        totalPrice={totalPrice}
+        onRemove={handleCartItemRemove.bind(null, id)}
+        onAdd={handleCartItemAdd.bind(null, { id, title, price, quantity })}
+      />
+    );
+  });
 
   return (
     <Modal
