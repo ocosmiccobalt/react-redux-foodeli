@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 
 import { cartActions } from '../../store/cart-slice.js';
 import Tabbed from '../UI/Tabbed/Tabbed.jsx';
+import classes from './Products.module.scss';
 
 const DUMMY_PRODUCTS = [
   [
@@ -177,10 +178,10 @@ function Products() {
   });
 
   return (
-    <section className='products' id={tabbedSectionId}>
-      <div className='products__wrapper wrapper'>
-        <h2 className='products__title' id={titleId}>Our menu</h2>
-        <p className='products__subtitle'>Menu That Always Makes You Fall In Love</p>
+    <section className={classes.products} id={tabbedSectionId}>
+      <div className={`${classes.products__wrapper} wrapper`}>
+        <h2 className={classes.products__title} id={titleId}>Our menu</h2>
+        <p className={classes.products__subtitle}>Menu That Always Makes You Fall In Love</p>
         <Tabbed
           tabbedSectionId={tabbedSectionId}
           titleId={titleId}

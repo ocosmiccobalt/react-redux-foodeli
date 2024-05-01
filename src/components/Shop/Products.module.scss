@@ -1,0 +1,44 @@
+@use "../../assets/sass/variables" as *;
+@use "../../assets/sass/mixins" as *;
+
+.products {
+  padding: 2em 0;
+}
+
+.products__wrapper {
+  @include section-wrapper-padding();
+}
+
+.products__title {
+  margin: 0;
+  margin-bottom: 0.6em;
+
+  @include section-title();
+}
+
+.products__subtitle {
+  margin: 0;
+  margin-bottom: 1em;
+
+  @include section-subtitle();
+}
+
+@media (min-width: $tablet-width) {
+  .products {
+    padding: 3.75em 0;
+  }
+
+  .products__title {
+    margin-bottom: 1.111em;
+  }
+
+  .products__subtitle {
+    margin-bottom: 0.6em;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .products__subtitle {
+    margin-bottom: 0.533em;
+  }
+}
