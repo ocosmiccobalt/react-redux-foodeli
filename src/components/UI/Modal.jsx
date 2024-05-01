@@ -19,7 +19,11 @@ function Modal({ open, onClose, children }) {
   const portalElement = document.getElementById('overlays');
 
   return createPortal(
-    <dialog className={classes.modal} ref={modal} onClose={onClose}>
+    <dialog
+      className={classes.modal}
+      ref={modal}
+      onClose={onClose}
+    >
       <div className={classes.modal__content}>
         {children}
       </div>

@@ -55,7 +55,10 @@ function Cart() {
       onClose={cartIsVisible ? handleCloseCart : null}
     >
       <h2 className={classes.cart__title}>Your cart</h2>
-      <ul className={classes.cart__list} role='list'>
+      <ul
+        className={classes.cart__list}
+        role='list'
+      >
         {cartItems}
       </ul>
       <p className={classes.cart__summary}>

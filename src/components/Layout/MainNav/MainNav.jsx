@@ -14,7 +14,10 @@ function MainNav({ className = '' }) {
   }
 
   return (
-    <nav className={`${className} ${classes['main-nav']}`} aria-label='Primary'>
+    <nav
+      className={`${className} ${classes['main-nav']}`}
+      aria-label='Primary'
+    >
       <button
         className={`${classes['main-nav__toggle']} ${buttonSubClass}`}
         type='button'
@@ -23,7 +26,10 @@ function MainNav({ className = '' }) {
         aria-label='Open'
         onClick={handleToggleNav}
       />
-      <SiteList id={menuId} open={expanded} />
+      <SiteList
+        id={menuId}
+        open={expanded}
+      />
     </nav>
   );
 }

@@ -178,10 +178,20 @@ function Products() {
   });
 
   return (
-    <section className={classes.products} id={tabbedSectionId}>
+    <section
+      className={classes.products}
+      id={tabbedSectionId}
+    >
       <div className={`${classes.products__wrapper} wrapper`}>
-        <h2 className={classes.products__title} id={titleId}>Our menu</h2>
-        <p className={classes.products__subtitle}>Menu That Always Makes You Fall In Love</p>
+        <h2
+          className={classes.products__title}
+          id={titleId}
+        >
+          Our menu
+        </h2>
+        <p className={classes.products__subtitle}>
+          Menu That Always Makes You Fall In Love
+        </p>
         <Tabbed
           tabbedSectionId={tabbedSectionId}
           titleId={titleId}

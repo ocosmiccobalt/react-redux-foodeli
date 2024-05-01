@@ -29,11 +29,11 @@ function Search({
 
     setButtonIsInTabOrder(true);
 
-    const emptyFieldBlur = value === '' && evt.type === 'blur';
+    const emptyFieldBlur = (value === '') && (evt.type === 'blur');
     const emptyFieldTab =
-      value === '' &&
-      evt.type === 'keydown' &&
-      evt.key === 'Tab';
+      (value === '') &&
+      (evt.type === 'keydown') &&
+      (evt.key === 'Tab');
 
     if (emptyFieldBlur || emptyFieldTab) {
       setButtonIsInTabOrder(false);
@@ -61,7 +61,10 @@ function Search({
       onFocus={handleFormFocus}
       onBlur={handleFormBlur}
     >
-      <label className={classes.search__label} htmlFor={fieldId}>
+      <label
+        className={classes.search__label}
+        htmlFor={fieldId}
+      >
         <span className='visually-hidden'>Search Foodeli</span>
         {icon}
       </label>

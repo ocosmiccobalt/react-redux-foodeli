@@ -2,7 +2,10 @@ import classes from './Logo.module.scss';
 
 function Logo({ className = '' }) {
   return (
-    <a className={`${className} ${classes.logo}`} href='#'>
+    <a
+      className={`${className} ${classes.logo}`}
+      href='#'
+    >
       <img
         className={classes.logo__image}
         src='/img/logo-group.svg'

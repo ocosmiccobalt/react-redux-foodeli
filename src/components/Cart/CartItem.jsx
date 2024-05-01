@@ -16,9 +16,15 @@ function CartItem({
       <h3 className={classes['cart-item__title']}>
         {title}
       </h3>
-      <p className={classes['cart-item__price']}>{formattedPrice}</p>
-      <p className={classes['cart-item__quantity']}>Quantity: {quantity}</p>
-      <p className={classes['cart-item__total']}>Total Price: {formattedTotalPrice}</p>
+      <p className={classes['cart-item__price']}>
+        {formattedPrice}
+      </p>
+      <p className={classes['cart-item__quantity']}>
+        Quantity: {quantity}
+      </p>
+      <p className={classes['cart-item__total']}>
+        Total Price: {formattedTotalPrice}
+      </p>
       <div className={classes['cart-item__buttons']}>
         <button
           className={classes['cart-item__button']}

@@ -22,7 +22,10 @@ function PageHeader() {
         <Logo className={classes['page-header__logo']} />
         <MainNav className={classes['page-header__nav']} />
         <div className={classes['page-header__user-tools']}>
-          <Search className={classes['page-header__search']} fieldId='search-field' />
+          <Search
+            className={classes['page-header__search']}
+            fieldId='search-field'
+          />
           <CartButton className={cartButtonClass} />
           <LoginButton className={loginButtonClass} />
         </div>

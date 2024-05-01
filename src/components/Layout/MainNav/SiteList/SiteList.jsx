@@ -24,7 +24,10 @@ function SiteList({ id, open }) {
       role='list'
     >
       <li className={classes['site-list__item']}>
-        <a className={classes['site-list__link']} href='#why'>
+        <a
+          className={classes['site-list__link']}
+          href='#why'
+        >
           Why Foodeli?
         </a>
       </li>
@@ -41,7 +44,10 @@ function SiteList({ id, open }) {
         links={foodeliMenuLinks}
       />
       <li className={classes['site-list__item']}>
-        <a className={classes['site-list__link']} href='#contact'>
+        <a
+          className={classes['site-list__link']}
+          href='#contact'
+        >
           Contact
         </a>
       </li>
