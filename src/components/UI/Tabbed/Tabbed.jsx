@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import TabList from './TabList/TabList.jsx';
 import TabPanel from './TabPanel/TabPanel.jsx';
+import classes from './Tabbed.module.scss';
 
 function Tabbed({
   tabbedSectionId,
@@ -22,6 +23,7 @@ function Tabbed({
     <TabPanel
       key={panelIdStart + (i + 1)}
       id={panelIdStart + (i + 1)}
+      className={classes.tabbed__panel}
       ariaLabelledby={tabIdStart + (i + 1)}
       hidden={selectedTab !== i}
     >
@@ -30,17 +32,18 @@ function Tabbed({
   ));
 
   return (
-    <>
+    <div className={classes.tabbed}>
       <TabList
         tabIdStart={tabIdStart}
         panelIdStart={panelIdStart}
+        className={classes.tabbed__list}
         names={tabs}
         selectedTab={selectedTab}
         onTabSelect={handleTabSelect}
         ariaLabelledby={titleId}
       />
       {tabPanels}
-    </>
+    </div>
   );
 }
 

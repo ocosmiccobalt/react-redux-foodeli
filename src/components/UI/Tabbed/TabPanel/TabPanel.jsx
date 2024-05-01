@@ -1,5 +1,6 @@
 function TabPanel({
   id,
+  className,
   ariaLabelledby,
   hidden,
   children
@@ -7,6 +8,7 @@ function TabPanel({
   return (
     <div
       id={id}
+      className={className}
       role='tabpanel'
       aria-labelledby={ariaLabelledby}
       hidden={hidden}

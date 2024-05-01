@@ -1,0 +1,49 @@
+@use "../../../assets/sass/variables" as *;
+
+.tabbed__list button {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tabbed__panel[hidden] {
+  display: none;
+}
+
+@media (min-width: $desktop-width) {
+  .tabbed {
+    display: flex;
+    align-items: flex-start;
+
+    padding-top: 0.5em;
+  }
+
+  .tabbed__list {
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 37%;
+    max-height: 100%;
+    padding-left: 1.125em;
+
+    overflow-y: scroll;
+
+    & button {
+      flex-shrink: 0;
+      flex-basis: auto;
+
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .tabbed__panel {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 43%;
+  }
+}

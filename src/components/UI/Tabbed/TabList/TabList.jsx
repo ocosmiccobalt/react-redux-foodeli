@@ -5,6 +5,7 @@ import Tab from './Tab.jsx';
 function TabList({
   tabIdStart,
   panelIdStart,
+  className,
   names = [],
   selectedTab,
   onTabSelect,
@@ -93,6 +94,7 @@ function TabList({
 
   return (
     <div
+      className={className}
       role='tablist'
       aria-labelledby={ariaLabelledby}
       onClick={handleTabListClick}
