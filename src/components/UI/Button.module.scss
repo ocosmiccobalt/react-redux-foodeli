@@ -230,6 +230,16 @@
   }
 }
 
+.button--bullet {
+  min-width: 1.25rem;
+  width: 1.25rem;
+  min-height: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+
+  border-radius: 50%;
+}
+
 .button__amount {
   position: absolute;
   top: 0;
@@ -272,8 +282,7 @@
     height: 1.125rem;
   }
 
-  &--prev,
-  &--next {
+  &--carousel {
     width: 1.5rem;
     height: 1.5rem;
   }
