@@ -10,7 +10,10 @@ const Button = forwardRef(function Button(
     modifiers = [],
     type,
     role, // e.g. role='tab'
+    ariaLabel,
     ariaControls,
+    ariaDisabled,
+    ariaCurrent,
     ariaSelected,
     tabIndex,
     onClick,
@@ -44,7 +47,10 @@ const Button = forwardRef(function Button(
       className={fullClassName}
       type={type || 'button'}
       role={role}
+      aria-label={ariaLabel}
       aria-controls={ariaControls}
+      aria-disabled={ariaDisabled}
+      aria-current={ariaCurrent}
       aria-selected={ariaSelected}
       tabIndex={tabIndex}
       onClick={onClick}
