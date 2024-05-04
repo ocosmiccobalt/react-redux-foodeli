@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 
 import { cartActions } from '../../store/cart-slice.js';
 import Tabbed from '../UI/Tabbed/Tabbed.jsx';
+import Carousel from '../UI/Carousel/Carousel.jsx';
 import classes from './Products.module.scss';
 
 const DUMMY_PRODUCTS = [
@@ -155,25 +156,34 @@ function Products() {
   }
 
   const tabbedItems = DUMMY_PRODUCTS.map((arr, i) => {
-    const productItems = arr.map((p) => (
-      <li key={p.id}>
-        <article>
+    const productItems = arr.map((p) => ({
+      label: p.title,
+      content: (
+        <>
           <h3>{p.title}</h3>
           <p>{`$${p.price}`}</p>
           <button
             type='button'
             onClick={handleCartItemAdd.bind(null, p)}
-          >
+            >
             Order now
           </button>
-        </article>
-      </li>
-    ));
+        </>
+      )
+    }));
+
+    const ariaLabel = CATEGORIES[i]
+      .split('-')
+      .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
+      .join(' ');
 
     return (
-      <ul key={CATEGORIES[i]}>
-        {productItems}
-      </ul>
+      <Carousel
+        key={CATEGORIES[i]}
+        ariaLabel={ariaLabel}
+        listId={CATEGORIES[i] + '-carousel-list'}
+        items={productItems}
+      />
     );
   });
 
