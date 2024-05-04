@@ -1,0 +1,105 @@
+@use "../../../assets/sass/variables" as *;
+@use "../../../assets/sass/mixins" as *;
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel__controls {
+  flex-shrink: 0;
+  flex-basis: auto;
+  display: flex;
+  justify-content: flex-end;
+
+  max-width: 100%;
+  padding-right: 1em;
+}
+
+.carousel__prev {
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.carousel__next {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  margin-left: 2.25rem;
+}
+
+.carousel__pagination {
+  flex-shrink: 0;
+  flex-basis: auto;
+  order: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  max-width: 100%;
+  padding-top: 0.625em;
+
+  & button {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    margin: 0 0.625rem 0.625rem;
+  }
+}
+
+.carousel__inner {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  width: 100%;
+  max-width: 100%;
+
+  overflow: hidden;
+}
+
+.carousel__list {
+  display: flex;
+
+  width: 100%;
+  margin: 0;
+
+  @include reset-list();
+}
+
+.carousel__item {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  width: 54.36%;
+  margin-right: 4.36%;
+
+  aspect-ratio: 109 / 127;
+
+  background-color: $accent-bg-color;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.carousel__slide[hidden] {
+  display: none;
+}
+
+@media (min-width: $desktop-width) {
+  .carousel {
+    padding-left: 5em;
+  }
+
+  .carousel__controls {
+    padding-right: 1.75em;
+    padding-bottom: 4em;
+  }
+
+  .carousel__inner {
+    padding-top: 4em;
+  }
+}
