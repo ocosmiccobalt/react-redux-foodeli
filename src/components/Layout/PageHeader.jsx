@@ -6,6 +6,8 @@ import LoginButton from '../Login/LoginButton.jsx';
 import classes from './PageHeader.module.scss';
 
 function PageHeader() {
+  const SEARCH_FIELD_ID = 'search-field';
+
   const getButtonClass = (modifier) => (
     `${
       classes['page-header__button']
@@ -24,7 +26,7 @@ function PageHeader() {
         <div className={classes['page-header__user-tools']}>
           <Search
             className={classes['page-header__search']}
-            fieldId='search-field'
+            fieldId={SEARCH_FIELD_ID}
           />
           <CartButton className={cartButtonClass} />
           <LoginButton className={loginButtonClass} />

@@ -6,8 +6,11 @@ import classes from './MainNav.module.scss';
 function MainNav({ className = '' }) {
   const [expanded, setExpanded] = useState(false);
 
+  const MENU_ID = 'site-list';
+  const navClassName = `${className} ${classes['main-nav']}`;
+
   const buttonSubClass = expanded ? classes['main-nav__toggle--open'] : '';
-  const menuId = 'site-list';
+  const buttonClassName = `${classes['main-nav__toggle']} ${buttonSubClass}`;
 
   function handleToggleNav() {
     setExpanded((prevExpanded) => !prevExpanded);
@@ -23,20 +26,20 @@ function MainNav({ className = '' }) {
 
   return (
     <nav
-      className={`${className} ${classes['main-nav']}`}
+      className={navClassName}
       aria-label='Primary'
       onBlur={handleNavBlur}
     >
       <button
-        className={`${classes['main-nav__toggle']} ${buttonSubClass}`}
+        className={buttonClassName}
         type='button'
-        aria-controls={menuId}
+        aria-controls={MENU_ID}
         aria-expanded={expanded}
         aria-label='Open'
         onClick={handleToggleNav}
       />
       <SiteList
-        id={menuId}
+        id={MENU_ID}
         open={expanded}
       />
     </nav>

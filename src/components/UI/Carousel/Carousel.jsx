@@ -5,12 +5,12 @@ import CarouselPagination from './CarouselPagination/CarouselPagination.jsx';
 import CarouselSlide from './CarouselSlide/CarouselSlide.jsx';
 import classes from './Carousel.module.scss';
 
-const carouselConfig = {
+const CAROUSEL_CONFIG = {
   shiftInPercent: 58.72,
   gutterInPercent: 4.36
 };
 
-const initialState = {
+const INITIAL_STATE = {
   position: 0,
   current: 0,
   nearest: 1
@@ -75,16 +75,16 @@ function carouselReducer(state, action) {
     }
   }
 
-  return initialState;
+  return INITIAL_STATE;
 }
 
 function Carousel({
   ariaLabel,
   listId,
   items,
-  config = carouselConfig
+  config = CAROUSEL_CONFIG
 }) {
-  const [state, dispatch] = useReducer(carouselReducer, initialState);
+  const [state, dispatch] = useReducer(carouselReducer, INITIAL_STATE);
   const { position, current, nearest } = state;
 
   const {

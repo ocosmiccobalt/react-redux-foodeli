@@ -12,8 +12,13 @@ function Dropdown({
 }) {
   const [expanded, setExpanded] = useState(false);
 
+  const dropdownClassName = `${className} ${classes.dropdown}`
+
   const buttonSubClass = expanded ? classes['dropdown__title--open'] : '';
+  const buttonClassName = `${classes.dropdown__title} ${buttonSubClass}`;
+
   const menuSubClass = expanded ? classes['dropdown__list--open'] : '';
+  const menuClassName = `${classes.dropdown__list} ${menuSubClass}`;
 
   useEffect(() => {
     if (navIsClosed) {
@@ -37,9 +42,9 @@ function Dropdown({
   ));
 
   return (
-    <Container className={`${className} ${classes.dropdown}`}>
+    <Container className={dropdownClassName}>
       <button
-        className={`${classes.dropdown__title} ${buttonSubClass}`}
+        className={buttonClassName}
         type='button'
         aria-controls={menuId}
         aria-expanded={expanded}
@@ -48,7 +53,7 @@ function Dropdown({
         {title}
       </button>
       <ul
-        className={`${classes.dropdown__list} ${menuSubClass}`}
+        className={menuClassName}
         id={menuId}
         role='list'
       >

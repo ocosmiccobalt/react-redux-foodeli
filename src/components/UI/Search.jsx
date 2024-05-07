@@ -10,7 +10,8 @@ function Search({
   const [hasFocus, setHasFocus] = useState(false);
   const [buttonIsInTabOrder, setButtonIsInTabOrder] = useState(false);
 
-  const subClass = hasFocus ? classes['search--hasfocus'] : '';
+  const formSubClass = hasFocus ? classes['search--hasfocus'] : '';
+  const formClassName = `${className} ${classes.search} ${formSubClass}`;
 
   const icon = (
     <svg
@@ -54,7 +55,7 @@ function Search({
 
   return (
     <form
-      className={`${className} ${classes.search} ${subClass}`}
+      className={formClassName}
       action={action}
       method='get'
       role='search'

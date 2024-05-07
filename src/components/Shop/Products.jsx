@@ -146,8 +146,8 @@ const DUMMY_PRODUCTS = [
 const CATEGORIES = ['burger', 'pizza', 'cupcake', 'ramen', 'ice-cream'];
 
 function Products() {
-  const tabbedSectionId = 'menu';
-  const titleId = 'menu-title';
+  const TABBED_SECTION_ID = 'menu';
+  const TITLE_ID = 'menu-title';
 
   const dispatch = useDispatch();
 
@@ -190,12 +190,12 @@ function Products() {
   return (
     <section
       className={classes.products}
-      id={tabbedSectionId}
+      id={TABBED_SECTION_ID}
     >
       <div className={`${classes.products__wrapper} wrapper`}>
         <h2
           className={classes.products__title}
-          id={titleId}
+          id={TITLE_ID}
         >
           Our menu
         </h2>
@@ -203,8 +203,8 @@ function Products() {
           Menu That Always Makes You Fall In Love
         </p>
         <Tabbed
-          tabbedSectionId={tabbedSectionId}
-          titleId={titleId}
+          tabbedSectionId={TABBED_SECTION_ID}
+          titleId={TITLE_ID}
           tabs={CATEGORIES}
           panels={tabbedItems}
         />

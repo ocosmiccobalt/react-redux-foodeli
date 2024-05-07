@@ -10,7 +10,11 @@ function CarouselButton({
 }) {
   const ariaLabel = prev ? 'Previous Slide' : 'Next Slide';
   const iconXlinkHref = '#icon-arrow-' + (prev ? 'left' : 'right');
-  const iconClassName = `${classes.button__icon} ${classes['button__icon--carousel']}`;
+  const iconClassName = `${
+    classes.button__icon
+  } ${
+    classes['button__icon--carousel']
+  }`;
 
   return (
     <Button
