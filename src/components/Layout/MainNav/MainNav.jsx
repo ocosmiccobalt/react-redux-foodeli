@@ -13,10 +13,19 @@ function MainNav({ className = '' }) {
     setExpanded((prevExpanded) => !prevExpanded);
   }
 
+  function handleNavBlur(evt) {
+    const navContainsFocus = evt.currentTarget.contains(evt.relatedTarget);
+
+    if (!navContainsFocus) {
+      setExpanded(false);
+    }
+  }
+
   return (
     <nav
       className={`${className} ${classes['main-nav']}`}
       aria-label='Primary'
+      onBlur={handleNavBlur}
     >
       <button
         className={`${classes['main-nav__toggle']} ${buttonSubClass}`}
