@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import classes from './Dropdown.module.scss';
 
@@ -7,12 +7,19 @@ function Dropdown({
   className = '',
   title,
   menuId,
-  links = []
+  links = [],
+  navIsClosed
 }) {
   const [expanded, setExpanded] = useState(false);
 
   const buttonSubClass = expanded ? classes['dropdown__title--open'] : '';
   const menuSubClass = expanded ? classes['dropdown__list--open'] : '';
+
+  useEffect(() => {
+    if (navIsClosed) {
+      setExpanded(false);
+    }
+  }, [navIsClosed]);
 
   function handleToggleMenu() {
     setExpanded((prevExpanded) => !prevExpanded);

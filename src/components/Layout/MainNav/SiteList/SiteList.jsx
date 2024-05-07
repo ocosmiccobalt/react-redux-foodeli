@@ -36,12 +36,14 @@ function SiteList({ id, open }) {
         title='Services'
         menuId='services-dropdown'
         links={servicesLinks}
+        navIsClosed={!open}
       />
       <Dropdown
         className={classes['site-list__item']}
         title='Menu'
         menuId='menu-dropdown'
         links={foodeliMenuLinks}
+        navIsClosed={!open}
       />
       <li className={classes['site-list__item']}>
         <a
