@@ -24,7 +24,7 @@ const DROPDOWNS = [
   { title: 'Menu', menuId: 'menu-dropdown', links: FOODELI_MENU_LINKS }
 ];
 
-function SiteList({ id, open }) {
+function SiteList({ id, open, navLostFocus }) {
   const subClass = open ? classes['site-list--open'] : '';
   const className = `${classes['site-list']} ${subClass}`;
 
@@ -35,7 +35,7 @@ function SiteList({ id, open }) {
       title={d.title}
       menuId={d.menuId}
       links={d.links}
-      navIsClosed={!open}
+      navLostFocus={navLostFocus}
     />
   ));
 

@@ -1,16 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import SiteList from './SiteList/SiteList.jsx';
 import classes from './MainNav.module.scss';
 
 function MainNav({ className = '' }) {
   const [expanded, setExpanded] = useState(false);
+  const [lostFocus, setLostFocus] = useState();
 
   const MENU_ID = 'site-list';
   const navClassName = `${className} ${classes['main-nav']}`;
 
   const buttonSubClass = expanded ? classes['main-nav__toggle--open'] : '';
   const buttonClassName = `${classes['main-nav__toggle']} ${buttonSubClass}`;
+
+  useEffect(()=> {
+    if (!lostFocus) {
+      return;
+    }
+
+    const timer = setTimeout(() => setLostFocus(false), 300);
+
+    return () => clearTimeout(timer);
+  }, [lostFocus]);
 
   function handleToggleNav() {
     setExpanded((prevExpanded) => !prevExpanded);
@@ -21,6 +32,7 @@ function MainNav({ className = '' }) {
 
     if (!navContainsFocus) {
       setExpanded(false);
+      setLostFocus(true);
     }
   }
 
@@ -41,6 +53,7 @@ function MainNav({ className = '' }) {
       <SiteList
         id={MENU_ID}
         open={expanded}
+        navLostFocus={lostFocus}
       />
     </nav>
   );

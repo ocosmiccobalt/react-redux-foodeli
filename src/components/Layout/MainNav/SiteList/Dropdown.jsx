@@ -8,7 +8,7 @@ function Dropdown({
   title,
   menuId,
   links = [],
-  navIsClosed
+  navLostFocus
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -21,10 +21,10 @@ function Dropdown({
   const menuClassName = `${classes.dropdown__list} ${menuSubClass}`;
 
   useEffect(() => {
-    if (navIsClosed) {
+    if (navLostFocus) {
       setExpanded(false);
     }
-  }, [navIsClosed]);
+  }, [navLostFocus]);
 
   function handleToggleMenu() {
     setExpanded((prevExpanded) => !prevExpanded);
