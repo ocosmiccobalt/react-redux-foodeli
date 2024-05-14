@@ -1,5 +1,5 @@
 import PageHeader from './components/Layout/PageHeader.jsx';
-import Products from './components/Shop/Products.jsx';
+import Products from './components/Shop/Products/Products.jsx';
 import Cart from './components/Cart/Cart.jsx';
 
 function App() {

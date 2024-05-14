@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 
-import { cartActions } from '../../store/cart-slice.js';
-import Tabbed from '../UI/Tabbed/Tabbed.jsx';
-import Carousel from '../UI/Carousel/Carousel.jsx';
+import { cartActions } from '../../../store/cart-slice.js';
+import Tabbed from '../../UI/Tabbed/Tabbed.jsx';
+import Carousel from '../../UI/Carousel/Carousel.jsx';
 import classes from './Products.module.scss';
 
 const DUMMY_PRODUCTS = [
