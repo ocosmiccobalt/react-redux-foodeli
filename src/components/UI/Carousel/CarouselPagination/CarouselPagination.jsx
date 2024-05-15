@@ -1,4 +1,4 @@
-import Button from '../../Button.jsx';
+import Button from '../../Button/Button.jsx';
 
 function CarouselPagination({
   className,

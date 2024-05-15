@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { uiActions } from '../../store/ui-slice.js';
-import Button from '../UI/Button.jsx';
-import classes from '../UI/Button.module.scss';
+import Button from '../UI/Button/Button.jsx';
+import ButtonIcon from '../UI/Button/ButtonIcon.jsx';
+import classes from '../UI/Button/Button.module.scss';
 
 function CartButton({ className = '' }) {
   const [isHighlighted, setIsHighlighted] = useState(false);
@@ -31,24 +32,6 @@ function CartButton({ className = '' }) {
     dispatch(uiActions.showCart());
   }
 
-  const iconClassName = `${
-    classes.button__icon
-  } ${
-    classes['button__icon--cart']
-  }`;
-
-  const icon = (
-    <svg
-      className={iconClassName}
-      width='20'
-      height='22'
-      aria-hidden='true'
-      focusable='false'
-    >
-      <use xlinkHref='#icon-cart'></use>
-    </svg>
-  );
-
   return (
     <Button
       className={className}
@@ -59,7 +42,11 @@ function CartButton({ className = '' }) {
       <span className={classes.button__amount}>
         {numberOfCartItems}
       </span>
-      {icon}
+      <ButtonIcon
+        modifier='cart'
+        width='20'
+        height='22'
+      />
     </Button>
   );
 }

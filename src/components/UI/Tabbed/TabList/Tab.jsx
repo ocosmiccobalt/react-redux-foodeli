@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-import Button from '../../Button.jsx';
+import Button from '../../Button/Button.jsx';
 
 function Tab({
   id,

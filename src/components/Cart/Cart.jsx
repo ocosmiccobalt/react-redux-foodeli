@@ -4,7 +4,7 @@ import { uiActions } from '../../store/ui-slice.js';
 import { cartActions } from '../../store/cart-slice.js';
 import Modal from '../UI/Modal.jsx';
 import CartItem from './CartItem.jsx';
-import Button from '../UI/Button.jsx';
+import Button from '../UI/Button/Button.jsx';
 import classes from './Cart.module.scss';
 
 function Cart() {

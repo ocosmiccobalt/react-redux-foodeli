@@ -1,5 +1,5 @@
-import Button from '../../Button.jsx';
-import classes from '../../Button.module.scss';
+import Button from '../../Button/Button.jsx';
+import ButtonIcon from '../../Button/ButtonIcon.jsx';
 
 function CarouselButton({
   className,
@@ -10,11 +10,6 @@ function CarouselButton({
 }) {
   const ariaLabel = prev ? 'Previous Slide' : 'Next Slide';
   const iconXlinkHref = '#icon-arrow-' + (prev ? 'left' : 'right');
-  const iconClassName = `${
-    classes.button__icon
-  } ${
-    classes['button__icon--carousel']
-  }`;
 
   return (
     <Button
@@ -25,15 +20,12 @@ function CarouselButton({
       ariaDisabled={ariaDisabled}
       onClick={onClick}
     >
-      <svg
-        className={iconClassName}
+      <ButtonIcon
+        modifier='carousel'
         width='24'
         height='24'
-        aria-hidden='true'
-        focusable='false'
-      >
-        <use xlinkHref={iconXlinkHref}></use>
-      </svg>
+        xlinkHref={iconXlinkHref}
+      />
     </Button>
   );
 }
