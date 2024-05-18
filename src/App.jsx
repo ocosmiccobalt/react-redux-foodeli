@@ -1,5 +1,5 @@
-import PageHeader from './components/Layout/PageHeader.jsx';
-import PageMain from './components/Layout/PageMain.jsx';
+import PageHeader from './components/Layout/PageHeader/PageHeader.jsx';
+import PageMain from './components/Layout/PageMain/PageMain.jsx';
 import Products from './components/Shop/Products/Products.jsx';
 import Cart from './components/Cart/Cart.jsx';
 

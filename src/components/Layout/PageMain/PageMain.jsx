@@ -1,5 +1,5 @@
-import Intro from './Intro.jsx';
-import Services from './Services/Services.jsx';
+import Intro from '../Intro/Intro.jsx';
+import Services from '../Services/Services.jsx';
 import classes from './PageMain.module.scss';
 
 function PageMain({ children }) {

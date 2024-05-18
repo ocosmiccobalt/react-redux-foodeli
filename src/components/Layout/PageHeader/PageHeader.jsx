@@ -1,8 +1,8 @@
-import Logo from './Logo.jsx';
-import MainNav from './MainNav/MainNav.jsx';
-import Search from '../UI/Search/Search.jsx';
-import CartButton from '../Cart/CartButton.jsx';
-import LoginButton from '../Login/LoginButton.jsx';
+import Logo from '../Logo/Logo.jsx';
+import MainNav from '../MainNav/MainNav.jsx';
+import Search from '../../UI/Search/Search.jsx';
+import CartButton from '../../Cart/CartButton.jsx';
+import LoginButton from '../../Login/LoginButton.jsx';
 import classes from './PageHeader.module.scss';
 
 function PageHeader() {
