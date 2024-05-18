@@ -1,0 +1,69 @@
+@use "../../../assets/sass/variables" as *;
+@use "../../../assets/sass/mixins" as *;
+
+.services {
+  padding: 1.125em 0;
+}
+
+.services__wrapper {
+  @include section-wrapper-padding();
+}
+
+.services__title {
+  margin: 0 auto;
+  margin-bottom: 1.111em;
+
+  @include section-title();
+  text-align: center;
+}
+
+.services__subtitle {
+  margin: 0 auto;
+  margin-bottom: 1.667em;
+
+  @include section-subtitle();
+  text-align: center;
+}
+
+.services__list {
+  margin: 0;
+
+  @include reset-list();
+}
+
+.services__item {
+  margin-bottom: 1em;
+}
+
+@media (min-width: $tablet-width) {
+  .services__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .services__item {
+    width: 33.33%;
+  }
+
+  @supports (display: grid) {
+    .services__list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto;
+    }
+
+    .services__item {
+      width: auto;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .services {
+    padding: 2.688em 0;
+  }
+
+  .services__subtitle {
+    margin-bottom: 0.8em;
+  }
+}
