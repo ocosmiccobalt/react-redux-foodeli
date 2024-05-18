@@ -1,0 +1,338 @@
+@use "../../assets/sass/variables" as *;
+
+.intro__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding-bottom: 2em;
+}
+
+.intro__inner {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  max-width: 100%;
+  padding: 2.68em 0.75em;
+}
+
+.intro__title {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 0.67em;
+
+  font-family: $rubik-font-family;
+  font-weight: 700;
+  font-size: 2em;
+  line-height: 1.6;
+  color: $extra-heavy-text-color;
+
+  & i {
+    font-family: $lobster-two-font-family;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.5em;
+    line-height: 1.067;
+    color: $primary-color;
+  }
+}
+
+.intro__tagline {
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: flex-start;
+  order: -1;
+
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 1.34em;
+  padding-right: 1em;
+
+  line-height: 1.5;
+  vertical-align: top;
+  color: $primary-color;
+
+  border-radius: 3.125em;
+
+  &::after {
+    content: "";
+
+    display: inline-block;
+    width: 1.25em;
+    height: 1.25em;
+    margin-left: 1em;
+
+    vertical-align: top;
+
+    background-image: url("/img/decor-cherries.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+.intro__description {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 1.333em;
+}
+
+.intro__actions {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  max-width: 100%;
+}
+
+.intro__illustration {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  width: 100%;
+  max-width: 30em;
+  margin: 0 auto;
+}
+
+.intro__image {
+  display: block;
+  width: 100%;
+
+  aspect-ratio: 67 / 65;
+}
+
+.intro__courier {
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: flex-start;
+
+  margin-bottom: 1em;
+}
+
+.intro__customers {
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: flex-end;
+
+  margin-bottom: 1em;
+}
+
+.intro__product {
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: flex-start;
+}
+
+@media (min-width: $tablet-width) {
+  .intro__wrapper {
+    position: relative;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .intro__inner {
+    width: 50%;
+    max-width: none;
+    padding: 2.68em 0;
+    padding-left: 2.6%;
+  }
+
+  .intro__title {
+    margin-top: auto;
+  }
+
+  .intro__actions {
+    position: relative;
+    z-index: 15;
+
+    max-width: 150%;
+    width: 150%;
+  }
+
+  .intro__button {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro__illustration {
+    width: 50%;
+    max-width: none;
+    margin: 0;
+    padding: 2.68em 0;
+    padding-right: 2.6%;
+  }
+
+  .intro__courier {
+    position: absolute;
+    top: 2.68em;
+    right: 2.6%;
+
+    margin-bottom: 0;
+  }
+
+  .intro__customers {
+    margin-bottom: 0;
+  }
+
+  .intro__product {
+    align-self: flex-end;
+  }
+}
+
+@media (min-width: $small-desktop-width) {
+  .intro__title {
+    font-size: 2.5em;
+  }
+
+  .intro__courier {
+    right: auto;
+    left: 50%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .intro__wrapper {
+    padding: 2.688em 0;
+    padding-top: 4.25em;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      z-index: 15;
+      top: 6.25em;
+      right: 7.625em;
+
+      width: 1.875em;
+      height: 1.875em;
+
+      background-image: url("/img/decor-fire.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .intro__inner {
+    width: 35.813em;
+    padding: 3.125em 0;
+    padding-left: 0.938em;
+  }
+
+  .intro__title {
+    margin-top: 0;
+    margin-bottom: 0.373em;
+
+    font-size: 4.188em;
+    line-height: 1.269;
+
+    & i {
+      font-size: 1.194em;
+      line-height: 1.063;
+    }
+  }
+
+  .intro__tagline {
+    margin-bottom: 3.125em;
+    padding-top: 0.875em;
+    padding-bottom: 0.875em;
+    padding-left: 1.25em;
+
+    background-color: $accent-bg-color;
+  }
+
+  .intro__description {
+    align-self: flex-start;
+
+    max-width: 26.5em;
+    margin-bottom: 1.389em;
+
+    font-size: 1.125em;
+    line-height: 1.667;
+  }
+
+  .intro__actions {
+    position: static;
+
+    max-width: 29.813em;
+    width: 29.813em;
+  }
+
+  .intro__illustration {
+    position: relative;
+
+    width: 52.34%;
+    margin-top: 2.813em;
+    margin-right: auto;
+    padding: 0;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: -0.438em;
+      left: 1.313em;
+
+      width: 5.625em;
+      height: 5.313em;
+
+      background-color: $outline-color;
+      background-image: url("/img/decor-time.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 4.063em 4.063em;
+      border-radius: 1.25em;
+
+      transform: rotate(-20deg);
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 5em;
+      right: 1em;
+
+      width: 5.125em;
+      height: 9.313em;
+
+      background-image: url("/img/decor-send-with-trace.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .intro__courier {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    order: 4;
+
+    margin-top: -12.875em;
+    margin-right: 7em;
+  }
+
+  .intro__customers {
+    align-self: flex-start;
+    order: 3;
+
+    margin-top: 1.125em;
+    margin-right: 4.25em;
+  }
+
+  .intro__product {
+    position: relative;
+
+    align-self: flex-start;
+    order: 5;
+
+    margin-top: -5.125em;
+  }
+}
