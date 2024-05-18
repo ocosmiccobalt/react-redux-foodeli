@@ -1,0 +1,73 @@
+@use "../../../assets/sass/variables" as *;
+
+.courier {
+  display: flex;
+  align-items: flex-start;
+
+  width: 100%;
+  max-width: 20.188em;
+  padding: 0.75em;
+
+  background-color: $body-bg-color;
+  border-radius: 3.125em;
+}
+
+.courier__profile {
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: auto;
+
+  padding: 0 1.5em;
+}
+
+.courier__name {
+  margin: 0;
+
+  font-weight: inherit;
+  font-size: 0.938em;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: $heavy-text-color;
+}
+
+.courier__info {
+  margin: 0;
+
+  font-size: 0.75em;
+  line-height: 1.917;
+  text-transform: capitalize;
+  color: $faint-text-color;
+}
+
+.courier__avatar {
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: center;
+  order: -1;
+
+  width: 2.938em;
+  margin: 0;
+}
+
+.courier__image {
+  display: block;
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+}
+
+.courier__button {
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: center;
+
+  margin-left: auto;
+}
+
+@media (min-width: $tablet-width) {
+  .courier {
+    width: 20.188em;
+    max-width: none;
+    padding: 0.75em 0.938em;
+  }
+}
