@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { uiActions } from '../../store/ui-slice.js';
 import { cartActions } from '../../store/cart-slice.js';
-import Modal from '../UI/Modal.jsx';
+import Modal from '../UI/Modal/Modal.jsx';
 import CartItem from './CartItem.jsx';
 import Button from '../UI/Button/Button.jsx';
 import classes from './Cart.module.scss';
