@@ -44,7 +44,7 @@ function Cart() {
         quantity={quantity}
         totalPrice={totalPrice}
         onRemove={handleCartItemRemove.bind(null, id)}
-        onAdd={handleCartItemAdd.bind(null, { id, title, price, quantity })}
+        onAdd={handleCartItemAdd.bind(null, { id, title, price })}
       />
     );
   });

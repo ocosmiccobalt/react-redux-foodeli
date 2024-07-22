@@ -37,7 +37,9 @@ function Products() {
   }
 
   function handleCartItemAdd(item) {
-    dispatch(cartActions.addItemToCart({ ...item, quantity: 1 }));
+    const { id, title, price } = item;
+
+    dispatch(cartActions.addItemToCart({ id, title, price, quantity: 1 }));
   }
 
   const tabbedItems = CATEGORIES.map((category) => {
