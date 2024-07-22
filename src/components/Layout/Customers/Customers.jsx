@@ -1,4 +1,4 @@
-import Picture from '../UI/Picture/Picture.jsx';
+import Picture from '../../UI/Picture/Picture.jsx';
 import classes from './Customers.module.scss';
 
 const LINK = {

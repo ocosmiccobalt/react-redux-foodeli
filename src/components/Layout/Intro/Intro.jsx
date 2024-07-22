@@ -1,7 +1,7 @@
 import Button from '../../UI/Button/Button.jsx';
 import Picture from '../../UI/Picture/Picture.jsx';
-import Courier from '../../Shop/Courier/Courier.jsx';
-import Customers from '../../Customers/Customers.jsx';
+import Courier from '../../Delivery/Courier/Courier.jsx';
+import Customers from '../Customers/Customers.jsx';
 import PopularProduct from '../../Shop/Popular/PopularProduct.jsx';
 import classes from './Intro.module.scss';
 
