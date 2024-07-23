@@ -1,21 +1,49 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { uiActions } from '../../store/ui-slice.js';
 import { cartActions } from '../../store/cart-slice.js';
+import { fetchCartData, sendCartData } from '../../store/cart-async-actions.js';
+import storageAvailable from '../../util/storage-available.js';
 import Modal from '../UI/Modal/Modal.jsx';
 import CartItem from './CartItem.jsx';
 import Button from '../UI/Button/Button.jsx';
 import classes from './Cart.module.scss';
 
+let isInitial = true;
+let cartId;
+
+if (storageAvailable('localStorage')) {
+  cartId = localStorage.getItem('cartId');
+}
+
 function Cart() {
   const userProgress = useSelector((state) => state.ui.userProgress);
   const cartIsVisible = userProgress === 'cart';
 
-  const { items, totalPrice } = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart);
+  const { items, totalPrice } = cart;
   const total = `$ ${totalPrice.toFixed(2)}`;
   const hasItems = items.length > 0;
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (cartId) {
+      dispatch(fetchCartData(cartId));
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+
+    if (cart.changed) {
+      dispatch(sendCartData(cart, cartId));
+    }
+  }, [cart, dispatch]);
 
   function handleCloseCart() {
     dispatch(uiActions.hideCart());
