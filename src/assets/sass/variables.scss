@@ -13,6 +13,8 @@ $light-gray-51: hsl(0, 0%, 51%);
 $light-gray-88: hsl(0, 0%, 88%);
 $rose: hsl(21, 94%, 93%);
 $golden: hsl(45, 86%, 62%);
+$dark-red: hsl(350, 32%, 12%);
+$dark-green: hsl(122, 90%, 12%);
 
 $body-bg-color: $white;
 
@@ -26,6 +28,9 @@ $faint-text-color: $light-gray-51;
 $alt-bg-color: $light-gray-88;
 $accent-bg-color: $rose;
 $outline-color: $golden;
+
+$notification-error-bg: $dark-red;
+$notification-success-bg: $dark-green;
 
 /* Fonts */
 $poppins-font-family: "Poppins", "Poppins fallback", "Verdana", sans-serif;
