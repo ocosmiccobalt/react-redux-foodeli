@@ -1,6 +1,10 @@
-@use "./assets/sass/normalize";
+@use "sass:meta";
 @use "./assets/sass/variables" as *;
 @use "./assets/sass/mixins" as *;
+
+@layer normalize {
+  @include meta.load-css("./assets/sass/normalize");
+}
 
 @font-face {
   font-family: "Poppins";
